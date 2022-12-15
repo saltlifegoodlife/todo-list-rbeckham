@@ -2,7 +2,6 @@
     font-family: 'Space Grotesk';
     font-style: normal;
     font-weight: 400;
-    color: #000000;
     display: flex;
     justify-content: center;
 }
@@ -19,14 +18,27 @@
 
 .form .task_box{
     background: rgba(217, 217, 217, 0.5);
-    border-radius: 8px;
-    padding: 20px 30px 10px 30px;
+    border-radius: 10px;
+    padding: 10px 45px;
     font-size: 0.8rem;
     
 }
 
+.form .div_input{
+    margin: 5px 0 0 0;
+}
+
+.form .div_button{
+    float: right;
+}
+
+.form .fontAwesome{
+    float: right; 
+    font-size: 35px;
+}
+
 .form input{
-    border-radius: 8px;
+    border-radius: 10px;
     height: 2rem;
     width: 20rem;
     margin-right: 10px;

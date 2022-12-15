@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-
 import classes from "./NewToDo.module.css";
-
 const NewToDo = (props) => {
   const [enteredTask, setEnteredTask] = useState("");
   const taskChangeHandler = (event) => {
@@ -30,18 +27,18 @@ const NewToDo = (props) => {
           <div>
             <label>ENTER TASK</label>
           </div>
-          <div style={{ margin: "5px 0 0 0" }}>
+          <div className={classes.div_input}>
             <input
               type="text"
               value={enteredTask}
               onChange={taskChangeHandler}
               placeholder="ENTER TASK"
             />
-            <div style={{ float: "right" }}>
+            <div className={classes.div_button}>
               <button type="submit">
                 <FontAwesomeIcon
+                  className={classes.fontAwesome}
                   icon={solid("square-plus")}
-                  style={{ float: "right", fontSize: "35px" }}
                 ></FontAwesomeIcon>
               </button>
             </div>
