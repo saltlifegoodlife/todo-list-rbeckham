@@ -14,7 +14,6 @@ function App(props) {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
-  console.log(tasks);
   return (
     <div>
       <NewToDo onAddTask={addTaskHandler}></NewToDo>

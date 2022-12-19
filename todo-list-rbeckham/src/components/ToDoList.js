@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import classes from "./ToDoList.module.css";
 
-const ToDoList = (props) => {
+const ToDoList = ({ onUpdateTasks, items }) => {
   //const [checked, setChecked] = useState([]);
   //   const handleCheck = (event) => {
   //     var updatedList = [...checked];
@@ -15,13 +15,13 @@ const ToDoList = (props) => {
   //     setChecked(updatedList);
   //   };
   const removeElement = (id) => {
-    props.onUpdateTasks(id);
+    onUpdateTasks(id);
   };
   return (
     <div className={classes.task_list} style={{ display: "hidden" }}>
       <div className={classes.task_box}>
         <ul>
-          {props.items.map((todo) => (
+          {items.map((todo) => (
             <li key={todo.id} style={{ display: "flex" }}>
               <div className={classes.task}>
                 <input
