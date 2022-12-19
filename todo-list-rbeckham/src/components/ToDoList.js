@@ -15,7 +15,7 @@ const ToDoList = ({ onUpdateTasks, items }) => {
       <div className={classes.task_box}>
         <ul>
           {items.map((todo) => (
-            <li key={todo.id} style={{}}>
+            <li key={todo.id}>
               <div className={classes.task}>
                 <input
                   id={`checkbox-${todo.id}`}
