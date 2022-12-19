@@ -7,6 +7,9 @@ const ToDoList = ({ onUpdateTasks, items }) => {
   const removeElement = (id) => {
     onUpdateTasks(id);
   };
+  if (!items.length) {
+    return null;
+  }
   return (
     <div className={classes.task_list}>
       <div className={classes.task_box}>

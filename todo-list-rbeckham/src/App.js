@@ -12,13 +12,10 @@ function App() {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
-  const tasksIsEmpty = tasks.length;
   return (
     <>
       <NewToDo onAddTask={addTaskHandler}></NewToDo>
-      {tasksIsEmpty && (
-        <ToDoList items={tasks} onUpdateTasks={updateTasksHandler} />
-      )}
+      <ToDoList items={tasks} onUpdateTasks={updateTasksHandler} />
     </>
   );
 }
