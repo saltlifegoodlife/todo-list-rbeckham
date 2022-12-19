@@ -1,28 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import classes from "./ToDoList.module.css";
 
 const ToDoList = ({ onUpdateTasks, items }) => {
-  //const [checked, setChecked] = useState([]);
-  //   const handleCheck = (event) => {
-  //     var updatedList = [...checked];
-  //     if (event.target.checked) {
-  //       updatedList = [...checked, event.target.value];
-  //     } else {
-  //       updatedList.splice(checked.indexOf(event.target.value), 1);
-  //     }
-  //     setChecked(updatedList);
-  //   };
   const removeElement = (id) => {
     onUpdateTasks(id);
   };
   return (
-    <div className={classes.task_list} style={{ display: "hidden" }}>
+    <div className={classes.task_list}>
       <div className={classes.task_box}>
         <ul>
           {items.map((todo) => (
-            <li key={todo.id} style={{ display: "flex" }}>
+            <li key={todo.id} style={{}}>
               <div className={classes.task}>
                 <input
                   id={`checkbox-${todo.id}`}

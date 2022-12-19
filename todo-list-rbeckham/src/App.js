@@ -1,9 +1,7 @@
-import React, { Component, useState } from "react";
-
-import "./App.css";
+import React, { useState } from "react";
 import NewToDo from "./components/NewToDo";
 import ToDoList from "./components/ToDoList";
-function App(props) {
+function App() {
   const [tasks, setTasks] = useState([]);
   const addTaskHandler = (task) => {
     setTasks((prevTasks) => {
@@ -14,13 +12,14 @@ function App(props) {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
+  const tasksIsEmpty = tasks.length;
   return (
-    <div>
+    <>
       <NewToDo onAddTask={addTaskHandler}></NewToDo>
-      {tasks.length !== 0 && (
+      {tasksIsEmpty && (
         <ToDoList items={tasks} onUpdateTasks={updateTasksHandler} />
       )}
-    </div>
+    </>
   );
 }
 
