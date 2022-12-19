@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-
-import "./App.css";
 import NewToDo from "./components/NewToDo";
-
+import ToDoList from "./components/ToDoList";
 function App() {
   const [tasks, setTasks] = useState([]);
-  const addTaskHandler = (tasks) => {
+  const addTaskHandler = (task) => {
     setTasks((prevTasks) => {
-      return [...prevTasks, tasks];
+      return [...prevTasks, task];
     });
   };
-  console.log(tasks);
+  const updateTasksHandler = (id) => {
+    const newTasks = tasks.filter((task) => task.id !== id);
+    setTasks(newTasks);
+  };
   return (
-    <div>
+    <>
       <NewToDo onAddTask={addTaskHandler}></NewToDo>
-    </div>
+      <ToDoList items={tasks} onUpdateTasks={updateTasksHandler} />
+    </>
   );
 }
 
