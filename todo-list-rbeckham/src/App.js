@@ -8,14 +8,27 @@ function App() {
       return [...prevTasks, task];
     });
   };
-  const updateTasksHandler = (id) => {
+  const deleteTaskHandler = (id) => {
     const newTasks = tasks.filter((task) => task.id !== id);
+    setTasks(newTasks);
+  };
+  const updateTaskHandler = (updateTask) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === updateTask.id) {
+        return { ...task, task: updateTask.task };
+      }
+      return task;
+    });
     setTasks(newTasks);
   };
   return (
     <>
       <NewToDo onAddTask={addTaskHandler}></NewToDo>
-      <ToDoList items={tasks} onUpdateTasks={updateTasksHandler} />
+      <ToDoList
+        items={tasks}
+        onDeleteTask={deleteTaskHandler}
+        onUpdateTask={updateTaskHandler}
+      />
     </>
   );
 }
