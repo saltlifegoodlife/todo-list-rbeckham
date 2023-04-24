@@ -4,6 +4,13 @@
 
 The ToDo app allows users to create daily tasks in order to keep track of them. They have the option to edit or delete them. If tasks are complete they can click the checkbox to mark as complete which will disappear from the list. Completed Tasks can be viewed on different screen with click of a completed tasks button that displays a modal on screen.
 
+# Table of Contents
+
+- [Installation](#Installation)
+- [Running Application](#Running-App)
+- [Screenshot-of-Application](#Examples-of-Tasks-and-Completed-Tasks:)
+- [Questions?](#Questions?)
+
 # Installation
 
 If you want to run this locally you will need to fork and clone repo. Add a .env to the server folder and add these lines of code for example:
@@ -53,7 +60,7 @@ Backend
     npm i nodemon
 ```
 
-### Available Scripts
+### Running App
 
 In the project directory, you can run:
 
@@ -69,9 +76,13 @@ Backend
 
 ## Examples of Tasks and Completed Tasks:
 
-<img src="./src/assets/tasks1.png"  width="400" height="300">
-<img src="./src/assets/tasks2.png"  width="350" height="300">
+![screenshot of tasks](./todo-list-rbeckham//src/assets/tasks1.PNG)
+![screenshot of completed tasks](./todo-list-rbeckham/src/assets/tasks2.PNG)
 
 ## Working Example
 
-<img src="./src/assets/tasks.gif">
+![Walkthrough of ToDo app](./todo-list-rbeckham/src/assets/tasks.gif)
+
+## Questions?
+
+My gitHub user name is saltlifegoodlife, and you may email me at rossh.beckham@gmail.com for Questions.
