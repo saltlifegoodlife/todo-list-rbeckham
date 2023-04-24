@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# ToDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The ToDo app allows users to create daily tasks in order to keep track of them. They have the option to edit or delete them. If tasks are complete they can click the checkbox to mark as complete which will disappear from the list. Completed Tasks can be viewed on different screen with click of a completed tasks button that displays a modal on screen.
+
+# Installation
+
+If you want to run this locally you will need to fork and clone repo. Add a .env to the server folder and add these lines of code for example:
+
+```sh
+PORT=5002
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=password
+DB_SCHEMA=todo_db
+```
+
+You will need to update .env with your configuration to match your database and the Host and Port your server is running on.
+
+### SQL Database
+
+Using MySQL
+Create a database using the the scripts provided by the file located at server/db/dbScripts.sql
+
+- Sign in to your mySQL and open a new task window.
+- Copy and paste scripts and run to create database and tables.
+
+### Installing node modules
+
+Frontend
+-Open terminal inside the `todo-list-beckham` folder. \
+
+- Run:
+
+```
+    npm i
+    npm i --save @fortawesome/fontawesome-svg-core
+    npm install --save @fortawesome/free-solid-svg-icons
+    npm install --save @fortawesome/react-fontawesome
+```
+
+Backend
+-Open terminal inside the `server` folder.\
+
+- Run:
+
+```
+    npm init
+    npm i express
+    npm i mysql2
+    npm i cors
+    npm i nodemon
+```
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Frontend
+-Run "npm start" inside the folder of the frontend part of the app in the terminal.\
+ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Backend
+-Run "npm start" inside server folder in the terminal to start the backend server to connect to your database you created with scripts.\
+ Will be running/listening on http://localhost:5002 by default in app based on the .env file you added.
 
-### `npm test`
+## Examples of Tasks and Completed Tasks:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="./src/assets/tasks1.png"  width="400" height="300">
+<img src="./src/assets/tasks2.png"  width="350" height="300">
 
-### `npm run build`
+## Working Example
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./src/assets/tasks.gif">

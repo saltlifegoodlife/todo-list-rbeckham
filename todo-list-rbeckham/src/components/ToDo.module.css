@@ -1,0 +1,70 @@
+.todo .todo_item {
+  display: flex;
+}
+
+.todo .task {
+  display: flex;
+  height: 20px;
+  width: 270px;
+  margin: 5px 13px 5px 0;
+  border-width: thin;
+  padding: 10px 13px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+
+.todo input {
+  margin: 0;
+}
+
+.todo .edit_input {
+  width: 270px;
+  border: none;
+}
+.todo .edit_input:focus {
+  outline: none;
+}
+
+.todo label {
+  margin: 0;
+  padding-left: 7px;
+  overflow: hidden;
+}
+
+.todo .edit_button {
+  margin-top: 15px;
+}
+
+.todo .edit_button button {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.todo .edit_icon {
+  color: #2355be;
+  font-size: 20px;
+}
+
+.todo .delete_button {
+  margin-top: 15px;
+}
+.todo .delete_button button {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.todo .delete_icon {
+  color: #c6362c;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.todo .cancel_icon {
+  color: #c6362c;
+  font-size: 21px;
+}
+
+.todo .save_icon {
+  color: #2355be;
+  font-size: 21px;
+}

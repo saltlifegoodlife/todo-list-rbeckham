@@ -15,54 +15,6 @@
   padding: unset;
 }
 
-.task_list .task {
-  display: flex;
-  height: 20px;
-  width: 270px;
-  margin: 5px 12px 5px 0;
-  border-width: thin;
-  padding: 10px 13px;
-  background: #ffffff;
-  border: 2px solid #000000;
-  border-radius: 10px;
-}
 .task_list li {
   display: flex;
-}
-.task_list input {
-  margin: 0;
-}
-
-.task_list label {
-  margin: 0;
-  padding-left: 7px;
-  overflow: hidden;
-}
-
-.task_list .edit_button {
-  margin-top: 20px;
-}
-
-.task_list .edit_button button {
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-.task_list .edit_icon {
-  color: #2355be;
-  font-size: 20px;
-}
-
-.task_list .delete_button {
-  margin-top: 20px;
-}
-.task_list .delete_button button {
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-.task_list .delete_icon {
-  color: #c6362c;
-  margin-left: 10px;
-  font-size: 20px;
 }

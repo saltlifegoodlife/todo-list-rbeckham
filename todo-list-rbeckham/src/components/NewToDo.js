@@ -7,12 +7,16 @@ const NewToDo = (props) => {
   const taskChangeHandler = (event) => {
     setEnteredTask(event.target.value);
   };
+
   const submitHandler = (event) => {
     event.preventDefault();
 
     const taskData = {
+      id: Math.random() * 90000,
       task: enteredTask,
-      id: Math.random().toString(),
+      // id: Math.random().toString(),
+      date: new Date().toLocaleDateString(),
+      completed: 0,
     };
 
     props.onAddTask(taskData);
