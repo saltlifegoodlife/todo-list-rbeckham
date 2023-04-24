@@ -18,18 +18,19 @@ const ToDo = ({ deleteTask, updateTask, todo }) => {
     e.preventDefault();
     const taskData = {
       id: todo.id,
-      task: updatedTask,
       completed: 1,
     };
     updateTask(taskData);
   };
 
   const updateTaskHandler = (e) => {
+    console.log("task", updatedTask);
     e.preventDefault();
     const taskData = {
       id: todo.id,
       task: updatedTask,
     };
+    console.log("taskData: ", taskData);
     updateTask(taskData);
     setEdit(!edit);
     setUpdatedTask("");
@@ -77,7 +78,7 @@ const ToDo = ({ deleteTask, updateTask, todo }) => {
             <input
               className={classes.edit_input}
               type="text"
-              value={updatedTask || ""}
+              value={updatedTask}
               onChange={updateChangeHandler}
             />
           </div>

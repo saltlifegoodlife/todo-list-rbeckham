@@ -60,15 +60,19 @@ function App() {
 
   const updateTaskHandler = (updateTask) => {
     console.log(updateTask);
+    let obj = updateTask.completed
+      ? JSON.stringify({
+          completed: updateTask.completed,
+        })
+      : JSON.stringify({
+          task: updateTask.task,
+        });
     fetch(`http://localhost:5002/api/toDo/${updateTask.id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({
-        task: updateTask.task,
-        completed: updateTask.completed,
-      }),
+      body: obj,
     })
       .then((response) => {
         return response.json();
