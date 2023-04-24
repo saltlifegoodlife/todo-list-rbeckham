@@ -14,12 +14,21 @@ const ToDo = ({ deleteTask, updateTask, todo }) => {
   const updateChangeHandler = (event) => {
     setUpdatedTask(event.target.value);
   };
+  const checkboxHandler = (e) => {
+    e.preventDefault();
+    const taskData = {
+      id: todo.id,
+      task: updatedTask,
+      completed: 1,
+    };
+    updateTask(taskData);
+  };
 
   const updateTaskHandler = (e) => {
     e.preventDefault();
     const taskData = {
-      task: updatedTask,
       id: todo.id,
+      task: updatedTask,
     };
     updateTask(taskData);
     setEdit(!edit);
@@ -37,7 +46,12 @@ const ToDo = ({ deleteTask, updateTask, todo }) => {
           <div className={classes.task}>
             {/* Warning error being thrown due to checkbox input not having default
             value, will finish on next ticket. */}
-            <input id={`checkbox-${todo.id}`} type="checkbox" value="" />
+            <input
+              id={`checkbox-${todo.id}`}
+              type="checkbox"
+              value=""
+              onChange={checkboxHandler}
+            />
             <label htmlFor={`checkbox-${todo.id}`}>{todo.task}</label>
           </div>
           <div className={classes.edit_button}>
