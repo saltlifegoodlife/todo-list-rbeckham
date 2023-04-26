@@ -12,7 +12,6 @@ const NewToDo = (props) => {
     event.preventDefault();
 
     const taskData = {
-      id: Math.random() * 90000,
       task: enteredTask,
       // id: Math.random().toString(),
       date: new Date().toLocaleDateString(),

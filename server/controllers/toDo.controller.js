@@ -1,9 +1,9 @@
 import query from "../db/utils.js";
 
-const findAll = async (completed, currentDate) => {
+const findAll = async (completed, currentDate, email) => {
   return query(
-    "SELECT id, task FROM tasks WHERE completed = ? AND task_date = ?",
-    [completed, currentDate]
+    "SELECT id, task FROM tasks WHERE completed = ? AND task_date = ? AND email = ?",
+    [completed, currentDate, email]
   );
 };
 

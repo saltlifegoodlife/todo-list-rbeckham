@@ -3,14 +3,29 @@ import NewToDo from "./components/NewToDo";
 import ToDoList from "./components/ToDoList";
 import Completed from "./components/modal/Completed";
 import "./App.css";
+import LoginButton from "./components/buttons/loginButton";
+import LogoutButton from "./components/buttons/logoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 function App() {
   const [tasks, setTasks] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [completedTasks, setCompletedTasks] = useState([]);
+  const { user, isAuthenticated } = useAuth0();
 
   const getTasksHandler = (id, completed) => {
+    let email = user.email;
     console.log(completed);
-    fetch(`http://localhost:5002/api/toDo/${id}&${completed}`)
+    console.log(email);
+    fetch(`http://localhost:5002/api/toDo/tasks`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        completed: completed,
+        email: email,
+      }),
+    })
       .then((response) => {
         return response.json();
       })
@@ -38,10 +53,10 @@ function App() {
         "Content-type": "application/json",
       },
       body: JSON.stringify({
-        id: task.id,
         task: task.task,
         task_date: task.date,
         completed: task.completed,
+        email: user.email,
       }),
     })
       .then((response) => {
@@ -122,22 +137,36 @@ function App() {
   };
 
   useEffect(() => {
-    getTasksHandler();
-  }, []);
+    if (isAuthenticated) {
+      console.log("User has logged in");
+      getTasksHandler(0, 0);
+    }
+  }, [isAuthenticated]);
 
   return (
     <>
-      <NewToDo onAddTask={addTaskHandler}></NewToDo>
-      <button className="complete-btn" onClick={modalHandler}>
-        Completed Tasks
-      </button>
-      <ToDoList
-        items={tasks}
-        onDeleteTask={deleteTaskHandler}
-        onUpdateTask={updateTaskHandler}
-      />
-      {showModal && (
-        <Completed onClose={modalHandler} complete={completedTasks} />
+      {!isAuthenticated ? (
+        <LoginButton />
+      ) : (
+        <>
+          <div className="div-top">
+            <p className="name">Hi, {user.given_name}!</p>
+            <LogoutButton />
+          </div>
+
+          <NewToDo onAddTask={addTaskHandler}></NewToDo>
+          <button className="complete-btn" onClick={modalHandler}>
+            Completed Tasks
+          </button>
+          <ToDoList
+            items={tasks}
+            onDeleteTask={deleteTaskHandler}
+            onUpdateTask={updateTaskHandler}
+          />
+          {showModal && (
+            <Completed onClose={modalHandler} complete={completedTasks} />
+          )}
+        </>
       )}
     </>
   );

@@ -76,8 +76,9 @@ Backend
 
 ## Examples of Tasks and Completed Tasks:
 
-![screenshot of tasks](./todo-list-rbeckham//src/assets/tasks1.PNG)
-![screenshot of completed tasks](./todo-list-rbeckham/src/assets/tasks2.PNG)
+![screenshot of login](./todo-list-rbeckham//src/assets/tasks1.PNG)
+![screenshot of adding tasks](./todo-list-rbeckham/src/assets/tasks2.PNG)
+![screenshot of completed tasks](./todo-list-rbeckham/src/assets/tasks3.PNG)
 
 ## Working Example
 

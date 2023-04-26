@@ -4,13 +4,12 @@ import toDo from "../controllers/toDo.controller.js";
 
 const toDoRouter = express.Router();
 
-toDoRouter.get("/:id&:completed?", async (req, res, next) => {
-  let { id, completed } = req.params;
-  console.log(completed);
+toDoRouter.post("/tasks", async (req, res, next) => {
+  let { completed, email } = req.body;
   let data;
   let currentDate = new Date().toLocaleDateString();
 
-  data = await toDo.findAll(completed, currentDate);
+  data = await toDo.findAll(completed, currentDate, email);
 
   res.json(data);
 });
